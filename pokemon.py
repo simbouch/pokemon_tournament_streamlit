@@ -13,9 +13,19 @@ class Pokemon:
 
     def get_battle_score(self):
         """
-        Calculates a battle score based on all stats.
+        Calculates a battle score based on weighted stats.
         """
-        total_score = sum(self.stats.values())
+        weights = {
+            'hp': 1,
+            'attack': 2,
+            'defense': 1.5,
+            'special-attack': 2,
+            'special-defense': 1.5,
+            'speed': 1
+        }
+        total_score = sum(
+            self.stats[stat] * weight for stat, weight in weights.items()
+        )
         return total_score
 
     def __str__(self):
@@ -29,8 +39,7 @@ class Pokemon:
         ]
         stats_str = '\n'.join(stats_lines)
         return (
-            f"Selected Pokémon: {self.name}\n"
-            f"ID: {self.id}\n"
+            f"Pokémon: {self.name}\n"
             f"Types: {types_str}\n"
             f"Stats:\n{stats_str}\n"
             + "-" * 40

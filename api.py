@@ -30,7 +30,6 @@ def select_random_pokemons(num_pokemons=16, max_pokemon_id=151):
         if data:
             selected_pokemons.append(data)
             selected_ids.add(pokemon_id)
-            # Print the Pokémon's name
             name = data['name'].capitalize()
             print(f"Selected Pokémon: {name}")
         time.sleep(0.2)  # Be kind to the API
