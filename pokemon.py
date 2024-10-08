@@ -11,20 +11,18 @@ class Pokemon:
         self.stats = {stat['stat']['name']: stat['base_stat'] for stat in data['stats']}
         self.image_url = data['sprites']['front_default']
 
-    def get_battle_score(self):
+    def get_battle_score(self, weights):
         """
         Calculates a battle score based on weighted stats.
+
+        Parameters:
+            weights (dict): A dictionary containing weights for each stat.
+
+        Returns:
+            float: The calculated battle score.
         """
-        weights = {
-            'hp': 1,
-            'attack': 2,
-            'defense': 1.5,
-            'special-attack': 2,
-            'special-defense': 1.5,
-            'speed': 1
-        }
         total_score = sum(
-            self.stats[stat] * weight for stat, weight in weights.items()
+            self.stats.get(stat, 0) * weight for stat, weight in weights.items()
         )
         return total_score
 
