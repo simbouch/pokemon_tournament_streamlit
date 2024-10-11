@@ -43,39 +43,32 @@ requests
 Installation
 Clone the repository:
 
-bash
-Copy code
 git clone https://github.com/simbouch/pokemon_tournament_streamlit.git
 cd pokemon_tournament_streamlit
 Create a virtual environment (recommended):
 
-bash
-Copy code
+
 python -m venv venv
 Activate the virtual environment:
 
 On Windows:
 
-bash
-Copy code
+
 venv\Scripts\activate
 On macOS/Linux:
 
-bash
-Copy code
+
 source venv/bin/activate
 Install the required packages:
 
-bash
-Copy code
+
 pip install -r requirements.txt
 The requirements.txt file includes all the necessary dependencies for the project.
 
 Usage
 Run the Streamlit app:
 
-bash
-Copy code
+
 streamlit run app.py
 Open the app in your browser:
 
